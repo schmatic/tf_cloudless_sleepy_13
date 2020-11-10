@@ -1,17 +1,7 @@
 # Configure these variables
 
-variable "x" {
-  description = "A x to pass to the template."
-  default     = "hello amy"
-}
-
-variable "z" {
-  description = "How long our local-exec will not take a nap."
-  default     = 0
-}
-
-variable "y" {
-  description = "A y to pass to the template."
+variable "sample_var" {
+  description = "A sample_var to pass to the template."
   default     = "hello"
 }
 
@@ -20,8 +10,13 @@ variable "sleepy_time" {
   default     = 0
 }
 
-variable "ibmcloud_api_key" {
-  description = "How ibmcloud_api_key will take a nap."
-  default     = "abc"
-}
+variable "image_id" {
+  type        = string
+  description = "The id of the machine image (AMI) to use for the server."
+  # default = "afasdf"
 
+  validation {
+    condition     = length(var.image_id) > 4 && substr(var.image_id, 0, 4) == "ami-"
+    error_message = "The image_id value must be a valid AMI id, starting with \"ami-\"."
+  }
+}

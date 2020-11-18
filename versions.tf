@@ -5,8 +5,4 @@ terraform {
       version = "1.14.0"
     }
   }
-}
-
-provider "ibm" {
-  
-}
+  }

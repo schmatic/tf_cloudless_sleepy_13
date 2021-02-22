@@ -10,3 +10,7 @@ variable "sleepy_time" {
   default     = 0
 }
 
+variable "secureval" {
+  description = "Defining var to check secure option."
+  default     = "testKey"
+}

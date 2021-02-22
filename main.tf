@@ -22,10 +22,12 @@ resource "null_resource" "sleep" {
     command = "sleep ${var.sleepy_time}"
   }
 }
-
+resource "null_resource" "assign_host" {
+  
   provisioner "local-exec" {
     command = "./printingvar.sh"
     environment = {
       API_KEY        = var.secureval
     }
+  }
   }

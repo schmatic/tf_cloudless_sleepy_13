@@ -1,1 +1,1 @@
-echo "Prinintg value : ${var.secureval}" 
+echo "Prinintg value : $API_KEY" 

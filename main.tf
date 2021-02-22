@@ -23,3 +23,8 @@ resource "null_resource" "sleep" {
   }
 }
 
+resource "null_resource" "safe-local-exec-test-1" {
+  provisioner         "local-exec" {
+   command = "./printingvar.sh"
+  }
+}
